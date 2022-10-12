@@ -23,7 +23,7 @@ python3.10 -m pip install -r requirements.txt
 ```
 python3.10 -m pip list
 ```
-- зайдите в проект, и введите команду для запуска файла  
+- зайдите в проект, и введите команду для запуска файла и введите ссылку, пример: 
 ```
-python3.10 bitlink.py
+python3.10 bitlink.py http://dvmn.org/
 ```
