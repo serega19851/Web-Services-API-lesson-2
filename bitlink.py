@@ -35,23 +35,24 @@ def is_bitlink(token, url):
     return response.ok
 
 
-def console_url():
+def gets_url():
     parser = argparse.ArgumentParser()
     parser.add_argument("url", help="display a square of a given number")
     args = parser.parse_args()
     return args.url
 
 
-def main(url):
+def main():
     load_dotenv()
+    console_url = gets_url()
     bitly_token = os.getenv("BITLY_TOKEN")
-    if is_bitlink(bitly_token, url):
+    if is_bitlink(bitly_token, console_url):
         return (
-            f'По вашей ссылки прошли: {count_clicks(bitly_token, url)}'
+            f'По вашей ссылки прошли: {count_clicks(bitly_token, console_url)}'
             f'раз(а)'
         )
-    return f'Битлинк: {shorten_link(bitly_token, url)}'
+    return f'Битлинк: {shorten_link(bitly_token, console_url)}'
 
 
 if __name__ == '__main__':
-    print(main(console_url()))
+    print(main())
